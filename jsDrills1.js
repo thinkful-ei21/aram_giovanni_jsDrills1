@@ -1,7 +1,7 @@
 'use strict';
 
 function whoAmI(name, age) {
-    if (name === undefined || age === NaN) {
+    if (typeof name  !== "string" || typeof age !== 'number') {
         console.error("Argument is invalid")
     } else {
         console.log(`My name is ${name} and I'm ${age} years old`);
@@ -25,4 +25,4 @@ function yearOfBirth(age) {
 
 
 
-whoAmI("Johnny", 108);
+whoAmI("Johnny");
