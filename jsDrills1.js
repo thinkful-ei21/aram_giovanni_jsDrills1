@@ -25,4 +25,4 @@ function yearOfBirth(age) {
 
 
 
-whoAmI("Johnny");
+whoAmI();
