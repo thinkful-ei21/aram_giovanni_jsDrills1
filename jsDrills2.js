@@ -25,8 +25,8 @@ function decode(string) {
     let answer = "";
 
     for (var i = 0; i < words.length; i++) {
-     //   console.log(words[i]);
-     //   console.log(words[i][0]);
+        //   console.log(words[i]);
+        //   console.log(words[i][0]);
         if (words[i][0] === "a") {
             answer = answer.concat(words[i][1]);
         } else if (words[i][0] === "b") {
@@ -45,11 +45,28 @@ function decode(string) {
 // decode(string);
 
 
-function daysInMonth(month, leapYear = false){
-    const months = ['january', 'febuary', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
-    if(!(month.toLowerCase() in months)){ throw('Must provide a valid month')}
+function daysInMonth(month, leapYear = false) {
+    let months = {
+        january,
+        febuary,
+        march,
+        april,
+        may,
+        june,
+        july,
+        august,
+        september,
+        october,
+        november,
+        december
+    }
 
-    switch(month.toLowerCase()){
+
+    if (!(month.toLowerCase() in months)) {
+        throw ('Must provide a valid month')
+    }
+
+    switch (month.toLowerCase()) {
         case january:
         case march:
         case may:
@@ -66,19 +83,15 @@ function daysInMonth(month, leapYear = false){
             return `${month} has 30 days`;
             break;
         case febuary:
-            if(leapYear){
-                return `${month} has 29 days`;}
-            else{
-                return `${month} has 28 days`;}
+            if (leapYear) {
+                return `${month} has 29 days`;
+            } else {
+                return `${month} has 28 days`;
+            }
             break;
 
     }
 
 }
 
-daysInMonth('january')
-
-
-
-
-
+daysInMonth();
