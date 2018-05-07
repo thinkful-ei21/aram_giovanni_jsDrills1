@@ -46,7 +46,7 @@ function decode(string) {
 
 
 
-function daysInMonth(month, leapYear = false){
+function daysInMonth(month, leapYear = false) {
     const months = {
         january: '',
         febuary: '',
@@ -96,3 +96,43 @@ function daysInMonth(month, leapYear = false){
 }
 
 // console.log(daysInMonth('January', false));
+
+function rockPaperScissors(p1, p2) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (typeof p1 !== "number") {
+        throw "Please enter a numer 1-3";
+    }
+    if (p1 > 3) {
+        throw "Please enter a numer 1-3";
+    }
+    if (p1 < 1) {
+        throw "Please enter a numer 1-3";
+    }
+    if (p1 % 1 !== 0) {
+        throw "Please enter a numer 1-3";
+    }
+
+    if (typeof p2 !== "number") {
+        p2 = randomNo;
+    }
+    let rock = 1;
+    let paper = 2;
+    let scissors = 3;
+
+    if (p1 === p2) {
+        return "Tie";
+    } else if ((p1 === rock) && (p2 === scissors)) {
+        return "Player one wins!"
+    } else if ((p1 === scissors) && (p2 === paper)) {
+        return "Player one wins!"
+    } else if ((p1 === paper) && (p2 === rock)) {
+        return "Player one wins!"
+    } else {
+        return "Player two wins!"
+    }
+
+}
+
+console.log(rockPaperScissors(1));
+console.log(rockPaperScissors(2));
+console.log(rockPaperScissors(2.5));
