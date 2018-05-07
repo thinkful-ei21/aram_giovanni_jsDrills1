@@ -46,7 +46,21 @@ function decode(string) {
 
 
 function daysInMonth(month, leapYear = false){
-    const months = ['january', 'febuary', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+    const months = {
+        january: '',
+        febuary: '',
+        march: '',
+        april: '',
+        may: '',
+        june: '',
+        july: '',
+        august: '',
+        september: '',
+        october: '',
+        november: '',
+        december: ''
+    }
+    console.log(month.toLowerCase())
     if(!(month.toLowerCase() in months)){ throw('Must provide a valid month')}
 
     switch(month.toLowerCase()){
